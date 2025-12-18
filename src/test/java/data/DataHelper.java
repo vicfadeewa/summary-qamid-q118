@@ -78,8 +78,9 @@ public class DataHelper {
         }
 
         public static String getPastYear() {
-            LocalDate localDate = LocalDate.now();
-            return String.format("y", localDate.minusYears(2));
+            int currentYear = LocalDate.now().getYear();
+            int pastYear = currentYear - 1;
+            return String.valueOf(pastYear);
         }
 
         public static String getYearWithLetters() {

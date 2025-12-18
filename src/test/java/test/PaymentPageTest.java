@@ -11,6 +11,8 @@ import org.junit.jupiter.api.Test;
 import pages.MainPage;
 import pages.PaymentPage;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Selenide.open;
 import static data.DataHelper.CardInfo.*;
 
@@ -63,7 +65,7 @@ public class PaymentPageTest {
 
 
     @Test
-        // Проверяет обработку оплаты картой, которая была отклонена
+        // Проверяет обработку оплаты картой, которая была отклонена, оформить Issue
     void shouldNotPayWithDeclinedCard() {
         val cardInfo = new DataHelper.CardInfo(getDeclinedCardNumber(), getValidMonth(), getValidYear(), getOwnerName(), getCVC());
         val mainPage = new MainPage();
@@ -199,7 +201,7 @@ public class PaymentPageTest {
         val mainPage = new MainPage();
         val paymentPage = mainPage.payByCard();
         paymentPage.fillAndSubmit(cardInfo);
-        paymentPage.assertExpiredCardError();
+        paymentPage.assertExpiredCardError(Duration.ofSeconds(20));
     }
 
 

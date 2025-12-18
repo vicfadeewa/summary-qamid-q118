@@ -31,7 +31,8 @@ public class PaymentPage {
     private final SelenideElement monthError = $(byText("Месяц")).parent().$(".input__sub");
     private final SelenideElement yearError = $(byText("Год")).parent().$(".input__sub");
     private final SelenideElement expiredCardError = $(byText("Истёк срок действия карты")).parent().$(".input__sub");
-    private final SelenideElement ownerError = $(byText("Владелец")).parent().$(".input__sub");
+
+    private final SelenideElement ownerError = $(byText("Владелец")).parent().$(".input__top");
     private final SelenideElement cvcError = $(byText("CVC/CVV")).parent().$(".input__sub");
 
     /**
@@ -80,9 +81,9 @@ public class PaymentPage {
     }
 
     /**
-     * Утверждает видимость ошибки "Истек срок действия карты".
+     * Утверждает видимость ошибки "Истёк срок действия карты".
      */
-    public void assertExpiredCardError() {
+    public void assertExpiredCardError(Duration duration) {
         expiredCardError.shouldBe(visible);
     }
 
