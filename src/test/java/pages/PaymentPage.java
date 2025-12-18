@@ -5,6 +5,7 @@ import data.DataHelper.CardInfo;
 
 import java.time.Duration;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byCssSelector;
 import static com.codeborne.selenide.Selectors.byText;
@@ -32,7 +33,7 @@ public class PaymentPage {
     private final SelenideElement yearError = $(byText("Год")).parent().$(".input__sub");
     private final SelenideElement expiredCardError = $(byText("Истёк срок действия карты")).parent().$(".input__sub");
 
-    private final SelenideElement ownerError = $(byText("Владелец")).parent().$(".input__top");
+    private final SelenideElement ownerError = $(byText("Владелец")).parent().$(".input__sub");
     private final SelenideElement cvcError = $(byText("CVC/CVV")).parent().$(".input__sub");
 
     /**
@@ -91,7 +92,8 @@ public class PaymentPage {
      * Утверждает видимость ошибки у поля "Владелец".
      */
     public void assertOwnerError() {
-        ownerError.shouldBe(visible);
+        ownerError.shouldBe(visible, Duration.ofSeconds(10));
+
     }
 
     /**

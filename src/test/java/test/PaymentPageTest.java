@@ -173,7 +173,7 @@ public class PaymentPageTest {
 
 
     @Test
-        // Проверяет обработку значения 00, оформить Issue
+        // Проверяет обработку значения 00
     void shouldNotPayWithMonthWithNulls() {
         val cardInfo = new DataHelper.CardInfo(getApprovedCardNumber(), getMonthWithNulls(), getValidYear(), getOwnerName(), getCVC());
         val mainPage = new MainPage();
