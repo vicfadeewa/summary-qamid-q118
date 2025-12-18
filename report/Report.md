@@ -8,7 +8,8 @@
 7 тестов не успешно 20.59%
 
 ![img.png](img.png)
-[Allure Report.html](../../../%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%B2%D0%B0%D1%8F%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0/Allure%20Report.html)
+<img width="1912" height="921" alt="image" src="https://github.com/user-attachments/assets/be280bf3-5bcf-4fa3-a4f3-eb95b7427d25" />
+
 
 
 
